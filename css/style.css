@@ -203,7 +203,7 @@ a:hover,
 .blog_item a:hover,
 .banner_content a:hover,
 .logo:hover,
-#hamimmenu li:hover a,
+#hamimmenu li:hover > a,
 #hamimmenu .nav-pills .nav-link.active {
     color: #000;
 }
@@ -251,7 +251,9 @@ a:hover,
     letter-spacing: 2px;
     font-size: 45px;
 }
-
+#hamimmenu li{
+    position: relative;
+}
 #hamimmenu li a {
     position: relative;
     padding: 15px 20px;
@@ -274,7 +276,7 @@ a:hover,
     transition: 2s;
     -webkit-transition: 2s;
 }
-#hamimmenu li a:hover:after,
+#hamimmenu li:hover > a:after,
 #hamimmenu li a.active:after{
     opacity: 1;
 }
@@ -282,7 +284,31 @@ a:hover,
     background: none;
 }
 
-
+#hamimmenu ul ul {
+    background-color: #f6f6f6;
+    box-shadow: 0 2px 3px #ddd;
+    position: absolute;
+    width: 180px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    padding-bottom: 5px;
+}
+#hamimmenu ul ul li{
+    width: 100%;
+}
+#hamimmenu ul li:hover > ul{
+    visibility: visible;
+    opacity: 1;
+}
+#hamimmenu li ul li a:after{
+    bottom: 50%;
+    left: 8px;
+    transform: translateY(50%);
+}
+#hamimmenu li ul li a{
+    font-size: 14px;
+}
 /*== banner part css start  ==*/
 
 .banner_item {
